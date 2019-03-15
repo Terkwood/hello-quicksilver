@@ -11,6 +11,10 @@ code.  This version has been modified to show the current time using
 
 ## Building static assets 
 
+You must first install `wasm-opt`.  [See the instructions in the binaryen package for help](https://github.com/WebAssembly/binaryen#building).
+
+Then:
+
 ```sh
 sh build.sh
 ```
