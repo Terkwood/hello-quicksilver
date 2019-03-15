@@ -5,6 +5,10 @@ It does nothing more than run a slightly modified example of the stopwatch
 code.  This version has been modified to show the current time using
 [stdweb](https://github.com/koute/stdweb), and to use different colors.
 
+## Live demo
+
+[You can run the demo in your browser right now.](https://clock.prawn.farm)
+
 ## Building static assets 
 
 ```sh
