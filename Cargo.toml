@@ -1,6 +1,6 @@
 [package]
 name = "hello-quicksilver"
-version = "0.1.0-exist"
+version = "0.1.0-tasty"
 authors = ["Terkwood <metaterkhorn@gmail.com>"]
 edition = "2018"
 

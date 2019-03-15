@@ -11,26 +11,28 @@ use quicksilver::{
 };
 
 struct Clock {
-    hours: u32,
-    minutes: u32,
-    seconds: u32,
+    hours: f64,
+    minutes: f64,
+    seconds: f64,
 }
 
 impl State for Clock {
     fn new() -> Result<Clock> {
         let now = Date::new();
+        let min = now.get_minutes() as f64;
+        let sec = now.get_seconds() as f64;
         Ok(Clock {
-            hours: now.get_hours() as u32,
-            minutes: now.get_minutes() as u32,
-            seconds: now.get_seconds() as u32,
+            hours: now.get_hours() as f64 + 1.0 / 60.0 * min + 1.0 / 60.0 / 60.0 * sec,
+            minutes: min + 1.0 / 60.0 * sec,
+            seconds: sec,
         })
     }
 
     fn update(&mut self, _window: &mut Window) -> Result<()> {
-        let now = Date::new();
-        self.hours = now.get_hours() as u32;
-        self.minutes = now.get_minutes() as u32;
-        self.seconds = now.get_seconds() as u32;
+        let now = Clock::new()?;
+        self.hours = now.hours;
+        self.minutes = now.minutes;
+        self.seconds = now.seconds;
         Ok(())
     }
 
